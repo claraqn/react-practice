@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 
-function User({ user, onRemove, onToggle }) {
+const User = React.memo(function User({ user, onRemove, onToggle }) {
   useEffect(() => {
     console.log('컴포넌트가 화면에 나타남');
     return () => {
@@ -23,7 +23,7 @@ function User({ user, onRemove, onToggle }) {
       {/* 삭제 버튼을 구현하고, 클릭 시 user.id 가 인자로 들어간 onRemove 함수 호출 */}
     </div>
   );
-}
+});
 
 function UserList({ users, onRemove, onToggle }) {
   return (
@@ -45,4 +45,4 @@ function UserList({ users, onRemove, onToggle }) {
   );
 }
 
-export default UserList;
+export default React.memo(UserList);

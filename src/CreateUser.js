@@ -1,6 +1,6 @@
 import React from 'react';
 
-function CreateUser({ username, email, onChange, onCreate }) {
+const CreateUser = ({ username, email, onChange, onCreate }) => {
   return (
     <div>
       <input
@@ -18,6 +18,7 @@ function CreateUser({ username, email, onChange, onCreate }) {
       <button onClick={onCreate}>등록</button>
     </div>
   );
-}
+};
 
-export default CreateUser;
+//리렌더링이 필요한 상황에서만 리렌더링하게 해주는 것=>React.memo
+export default React.memo(CreateUser);
